@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PhotoShare</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="header">
+    <p>
+      <% if current_user %>
+        <%= current_user.username %> |
+        <%= link_to "Log Out", log_out_path %>
+      <% else %>
+        <%= link_to "New User", new_user_path %> |
+        <%= link_to "Log In", log_in_path %>
+      <% end %>
+    </p>
+  </div>
+
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+
+<%= yield %>
+
+</body>
+</html>
