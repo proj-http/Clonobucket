@@ -2,28 +2,43 @@
 <html>
 <head>
   <title>PhotoShare</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="header">
-    <p>
-      <%= link_to "Home", root_path %> |
-      <% if current_user %>
-        <%= link_to current_user.username, user_path(current_user.id) %> |
-        <%= link_to "Log Out", log_out_path %>
-      <% else %>
-        <%= link_to "New User", new_user_path %> |
-        <%= link_to "Log In", log_in_path %>
-      <% end %>
-    </p>
+  <div class="container">
+
+    <div class="header">
+        <ul class="nav nav-pills">
+          <li role="presentation">
+            <%= link_to "Home", root_path %>
+          </li>
+          <% if current_user %>
+          <li role="presentation">
+            <%= link_to current_user.username, user_path(current_user.id) %>
+          </li>
+          <li role="presentation">
+            <%= link_to "Log Out", log_out_path %>
+          </li>
+          <% else %>
+          <li role="presentation">
+            <%= link_to "New User", new_user_path %>
+          </li>
+          <li role="presentation">
+            <%= link_to "Log In", log_in_path %>
+          </li>
+          <% end %>
+        </ul>
+    </div>
+
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  <div class="col-md-12">
+    <%= yield %>
   </div>
 
-  <%= flash[:notice] %>
-  <%= flash[:alert] %>
-
-<%= yield %>
-
+  </div>
 </body>
 </html>

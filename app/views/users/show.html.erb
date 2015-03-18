@@ -1,6 +1,27 @@
-<h1><%= @user.username %>'s profile</h1>
+<div class="col-md-6 user-prof">
+  <h3><%= @user.username %>'s profile</h3>
+  <%= image_tag @user.avatar.url(:medium) %>
+  <hr>
+  <div class="row col-md-12 user-deets">
+    some info: some more
+  </div>
 
-<%= image_tag @user.avatar.url %>
-<%= image_tag @user.avatar.url(:medium) %>
-<%= image_tag @user.avatar.url(:thumb) %>
+  <div class="row col-md-12 user-deets">
+    some info: some more
+  </div>
+
+  <div class="row col-md-12 user-deets">
+    some info: some more
+  </div>
+
+  <div class="row col-md-12 user-deets">
+    some info: some more
+  </div>
+
+  <div class="row col-md-12 user-deets">
+    some info: some more
+  </div>
+
+</div>
+
 <!--  images go here! -->
