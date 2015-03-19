@@ -6,4 +6,10 @@
 </h1>
 <p>
 
+  <% @photos.each do |photo| %>
+    <%= image_tag photo.image.url(:thumb) %>
+    <%= photo.user.username %>
+
+  <% end %>
+
 </p>

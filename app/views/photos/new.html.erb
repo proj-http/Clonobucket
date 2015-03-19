@@ -1,0 +1,9 @@
+<%= render "layouts/errors", :object => @user %>
+<h1>Upload a new image!</h1>
+
+<%= form_for [@user, @photo] do |f| %>
+  <%=f.hidden_field :user_id, :value => @user.id%>
+  <%=f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.submit "Upload Image" %>
+<% end %>
