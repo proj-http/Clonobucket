@@ -1,13 +1,11 @@
 class User < ActiveRecord::Base
 
   validates :username, :presence => true
-  validates :password, :presence => true
+  validates :password, :presence => true, :on => :create
   has_many :photos
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
-
 
   attr_accessor :password
   validates_confirmation_of :password

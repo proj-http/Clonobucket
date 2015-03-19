@@ -30,7 +30,9 @@
 .thumb-div {
   padding: 0px;
   margin: 5px;
-  height: 100px;
+  height: 150px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .medium-div {

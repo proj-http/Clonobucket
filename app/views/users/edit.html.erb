@@ -1,0 +1,23 @@
+
+<%= render "layouts/errors", :object => @user %>
+
+<h1>Edit your profile:</h1>
+<%= form_for @user do |f| %>
+<p>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+</p>
+<p>
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+</p>
+<p>
+  <%= f.label :camera_type %>
+  <%= f.text_field :camera_type %>
+</p>
+<p>
+  <%= f.label "Favorite sea creature" %>
+  <%= f.text_field :sea_creature %>
+</p>
+  <%= f.submit %>
+<%end%>
