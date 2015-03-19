@@ -18,8 +18,37 @@
   padding-bottom: 1em;
   background: hsla(200, 46%, 64%, 0.27);
   border-radius: 3px;
+  height: 300px;
+  display: inline-block;
+  float: left;
 }
 
 .user-deets {
   padding-top: 1em;
+}
+
+.thumb-div {
+  padding: 0px;
+  margin: 5px;
+  height: 100px;
+}
+
+.medium-div {
+  padding: 0px;
+  margin: 5px;
+  height: 300px;
+}
+.thumb-info {
+  background: hsla(360, 100%, 100%, 0.88);
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  bottom: 0;
+}
+.medium-info {
+  background: hsla(360, 100%, 100%, 0.88);
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  top: 0;
 }

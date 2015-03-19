@@ -1,5 +1,13 @@
-<div class="col-md-6 user-prof">
-  <h3><%= @user.username %>'s profile</h3>
+<div class="col-md-3 user-prof">
+  <h3><%= @user.username %>'s profile
+    <br>
+  <small>
+    <% if current_user == @user %>
+      <%= link_to "Upload a new image.", new_user_photo_path(@user) %>
+    <% end %>
+  </small>
+  </h3>
+
   <%= image_tag @user.avatar.url(:medium) %>
   <hr>
   <div class="row col-md-12 user-deets">
@@ -14,22 +22,15 @@
     some info: some more
   </div>
 
-  <div class="row col-md-12 user-deets">
-    some info: some more
-  </div>
 
-  <div class="row col-md-12 user-deets">
-    some info: some more
-  </div>
 
-<% if current_user == @user %>
-  <%= link_to "Upload a new image.", new_user_photo_path(@user) %>
-<% end %>
 
 </div>
 
-<div class="col-md-6">
   <% @photos.each do |photo| %>
-    <%= image_tag photo.image.url(:medium) %>
+  <div class="col-xs-3 medium-div" style="background: url('<%= photo.image.url(:medium)%>') no-repeat; background-size: contain;">
+    <div class="col-xs-12 medium-info">
+      &nbsp;<%= link_to "X", user_photo_path(@user, photo), :data => {:method => "delete"} %> | <%= Time.at(photo.image.updated_at).to_date %>
+    </div>
+  </div>
   <% end %>
-</div>

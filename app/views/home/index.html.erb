@@ -7,8 +7,13 @@
 <p>
 
   <% @photos.each do |photo| %>
-    <%= image_tag photo.image.url(:thumb) %>
-    <%= photo.user.username %>
+    <div class="col-md-2 thumb-div" style="background: url('<%= photo.image.url(:thumb)%>') no-repeat; background-size: contain;">
+       <!-- image_tag photo.image.url(:thumb) %> -->
+      <br>
+      <div class="col-xs-12 thumb-info">
+        <%= link_to photo.user.username, user_path(photo.user) %>
+      </div>
+    </div>
 
   <% end %>
 
